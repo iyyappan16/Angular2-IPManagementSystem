@@ -1,0 +1,72 @@
+<!-- header of the page-->
+<header *ngIf="isLoginRegisterPage" class="l-header">
+        <div class="l-header__inner clearfix">
+         <!--  <div class="c-header-icon js-hamburger">
+            <div class="hamburger-toggle"><span class="bar-top"></span><span class="bar-mid"></span><span class="bar-bot"></span></div>
+          </div> -->
+          <div class="c-header-icon js-hamburger">
+            <div class="iconhide fa fa-arrow-right"><span class="bar-top"></span><span class="bar-mid"></span><span class="bar-bot"></span></div>
+          </div>
+          <div class="c-search">
+            <h1 class="page-title">&nbsp;&nbsp;IP Management System</h1>
+          </div>
+            <div class="header-icons-group">
+          
+              <div class="c-header-icon basket">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <span class="dropdown-toggle" data-toggle="dropdown" >
+                            <i class="fa fa-user-circle-o" style="font-size:24px"></i>
+                          &nbsp;{{loggedInUser?.userName}}</span>
+                        <ul class="dropdown-menu">
+                        <li>&nbsp;&nbsp;<i class="fa fa-user-plus"></i> {{loggedInUser?.userType}} User</li>
+
+                        </ul>
+                    </li>
+                  </ul>
+              </div>
+              <div class="c-header-icon logout">
+                  <a (click)="logout()"><i class="fa fa-power-off"> Logout</i></a></div>
+            </div>
+        </div>
+      </header>
+    <!-- left navication -->
+      <div *ngIf="isLoginRegisterPage" class="l-sidebar">
+          <div class="logo">
+            <div class="logo__txt">Demo</div>
+          </div>
+          <div class="l-sidebar__content">
+            <nav class="c-menu js-menu">
+              <ul class="u-list">
+               
+                <li class="c-menu__item " data-toggle="tooltip" title="Show List">
+                  <a routerLink="/index">
+                    
+                  <div class="c-menu__item__inner"><i class="fa fa-th-list"></i>
+                    <div class="c-menu-item__title"><span>Home</span></div>
+                  </div>
+                </a>
+                </li>
+            
+                <li class="c-menu__item " data-toggle="tooltip" title="Add new IP">
+                  <a routerLink="/add-ip">
+                  <div class="c-menu__item__inner"><i class="fa fa-plus"></i>
+                    <div class="c-menu-item__title"><span>Add IP</span></div>
+                  </div>
+                  </a>
+                </li>
+                <li class="c-menu__item has-submenu" data-toggle="tooltip" title="Delete IP">
+                  <a routerLink="/delete-ip">
+                  <div class="c-menu__item__inner"><i class="fa fa-trash"></i>
+                    <div class="c-menu-item__title"><span>Delete IP</span></div>
+                  </div>
+                </a>
+                </li>
+               
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+
+<router-outlet></router-outlet>

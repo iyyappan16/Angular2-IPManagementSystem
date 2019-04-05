@@ -1,0 +1,59 @@
+<p>
+  register works!
+</p>
+<header class="l-header">
+ 
+  <div class="c-search">
+    <h1 class="page-title">IP Address Adding System</h1>
+  </div>
+  
+
+</header>
+<body>
+
+<main class="l-main">
+<div class="content-wrapper content-wrapper--with-bg">
+  <h1 class="page-title" style="margin-left: 20%">User Registration</h1>
+<div class="page-content col-lg-6" style="margin-left: 20%">
+  
+        <form #regForm="ngForm" name="userRegForm"> 
+            <h2>New User Signup</h2>
+            <h6 *ngIf="!regForm.valid" style="color: red">** All fields are mandatory</h6>
+            
+            <div class="input-container">
+              <i class="fa fa-user icon"></i>
+              <input [(ngModel)]="fname" #fnameControl="ngModel" class="input-field" type="text" placeholder="First Name" name="fname" minlength="1" required>
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <input [(ngModel)]="lname" #lnameControl="ngModel" class="input-field" type="text" placeholder="Last Name" minlength="1" name="lname">
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <input [(ngModel)]="userName" #userNameControl="ngModel" class="input-field" type="text" placeholder="Username" minlength="1" name="userName">
+            </div>
+                         
+            <div class="input-container">
+              <i class="fa fa-key icon"></i>
+              <input [(ngModel)]="password" #passwordControl="ngModel" class="input-field" type="password" placeholder="Password" minlength="1" name="password">
+            </div>
+            <div class="input-container">
+              <i class="fa fa-sort-desc icon"></i>
+              <select class="input-field" name="usertype" [(ngModel)]="userType" #userTypeControl="ngModel"  required>
+                  <option default>Select UserType</option>
+                  <option value="Basic">Basic</option>
+                  <option value="Premium" >Premium</option>
+              </select>
+              </div>
+
+              <div class="input-container"style="margin-left: 30%">
+            <button [disabled]="!regForm.valid" type="button" (click)="userRegister()" class="btn" style="width: 40%;float: left">Sign Up</button> 
+              </div>
+              <p style="margin-left: 30%"> Registered user kindly <a routerLink="/login" style="text-decoration: underline">Sign In</a></p>
+            </form>
+  
+  </div>
+</div>
+</main>

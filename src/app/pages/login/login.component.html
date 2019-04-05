@@ -1,0 +1,35 @@
+<header class="l-header">
+ 
+  <div class="c-search">
+    <h1 class="page-title">IP Address Adding System</h1>
+  </div>
+  
+
+</header>
+<body>
+
+<main class="l-main">
+<div class="content-wrapper content-wrapper--with-bg">
+
+<h1 class="page-title" style="margin-left: 20%">User Login/Sign-In</h1>
+<div class="page-content col-lg-6" style="margin-left: 20%">
+  
+        <form action="/action_page.php">
+            <h2>Registered User</h2>
+            <div class="input-container">
+              <i class="fa fa-user icon"></i>
+              <input  [(ngModel)] ="userName" class="input-field" type="text" placeholder="Username" name="usrnm" required>
+            </div>        
+            <div class="input-container">
+              <i class="fa fa-key icon"></i>
+              <input  [(ngModel)] ="password" class="input-field" type="password" placeholder="Password" name="psw" required>
+            </div>
+            <div class="input-container" style="margin-left: 30%">
+            <button type="button" (click)="userLoign()" class="btn" style="width: 40%;">SignIn</button>
+            </div>
+            <p style="margin-left: 10%"> For new user kindly <a routerLink="/register" style="text-decoration: underline">Register Here</a>
+          </form>
+  
+  </div>
+</div>
+</main>
